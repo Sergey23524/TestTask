@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--Book-->
+    <changeSet id="insert-book-data" author="Perepechin">
+
+        <insert tableName="book_entity">
+            <column name="title" value="testBook"/>
+            <column name="year" value="2014"/>
+        </insert>
+        <insert tableName="book_entity">
+            <column name="title" value="testBook1"/>
+            <column name="year" value="1990"/>
+        </insert>
+        <insert tableName="book_entity">
+            <column name="title" value="testBook2"/>
+            <column name="year" value="2024"/>
+        </insert>
+        <insert tableName="book_entity">
+            <column name="title" value="testBook3"/>
+            <column name="year" value="1754"/>
+        </insert>
+
+    </changeSet>
+
+    <!--Author-->
+    <changeSet id="insert-author-data" author="Perepechin">
+
+        <insert tableName="author_entity">
+            <column name="birth_date" value="21.01.1995"/>
+            <column name="first_name" value="Name"/>
+            <column name="last_name" value="Fname"/>
+        </insert>
+        <insert tableName="author_entity">
+            <column name="birth_date" value="21.01.1995"/>
+            <column name="first_name" value="Name1"/>
+            <column name="last_name" value="Fname1"/>
+        </insert>
+        <insert tableName="author_entity">
+            <column name="birth_date" value="21.01.1995"/>
+            <column name="first_name" value="Name2"/>
+            <column name="last_name" value="Fname2"/>
+        </insert>
+        <insert tableName="author_entity">
+            <column name="birth_date" value="21.01.1995"/>
+            <column name="first_name" value="Name3"/>
+            <column name="last_name" value="Fname3"/>
+        </insert>
+        <insert tableName="author_entity">
+            <column name="birth_date" value="21.01.1995"/>
+            <column name="first_name" value="Name4"/>
+            <column name="last_name" value="Fname4"/>
+        </insert>
+
+    </changeSet>
+
+    <!--Book - Author-->
+    <changeSet id="insert-book-author-data" author="Perepechin">
+
+        <insert tableName="author_entity_book_entities">
+            <column name="author_entity_id" valueComputed="(SELECT id from author_entity where first_name='Name')"/>
+            <column name="book_entity_id" valueComputed="(SELECT id from book_entity where title='testBook')"/>
+        </insert>
+        <insert tableName="author_entity_book_entities">
+            <column name="author_entity_id" valueComputed="(SELECT id from author_entity where first_name='Name1')"/>
+            <column name="book_entity_id" valueComputed="(SELECT id from book_entity where title='testBook')"/>
+        </insert>
+        <insert tableName="author_entity_book_entities">
+            <column name="author_entity_id" valueComputed="(SELECT id from author_entity where first_name='Name1')"/>
+            <column name="book_entity_id" valueComputed="(SELECT id from book_entity where title='testBook1')"/>
+        </insert>
+        <insert tableName="author_entity_book_entities">
+            <column name="author_entity_id" valueComputed="(SELECT id from author_entity where first_name='Name2')"/>
+            <column name="book_entity_id" valueComputed="(SELECT id from book_entity where title='testBook1')"/>
+        </insert>
+        <insert tableName="author_entity_book_entities">
+            <column name="author_entity_id" valueComputed="(SELECT id from author_entity where first_name='Name3')"/>
+            <column name="book_entity_id" valueComputed="(SELECT id from book_entity where title='testBook2')"/>
+        </insert>
+        <insert tableName="author_entity_book_entities">
+            <column name="author_entity_id" valueComputed="(SELECT id from author_entity where first_name='Name4')"/>
+            <column name="book_entity_id" valueComputed="(SELECT id from book_entity where title='testBook3')"/>
+        </insert>
+
+    </changeSet>
+
+    <!--Reader-->
+    <changeSet id="insert-reader-data" author="Perepechin">
+
+        <insert tableName="reader_entity">
+            <column name="birth_date" value="21.01.1995"/>
+            <column name="first_name" value="Fname"/>
+            <column name="gender" value="M"/>
+            <column name="last_name" value="Name"/>
+            <column name="phone_number" value="8(800)555-35-35"/>
+        </insert>
+        <insert tableName="reader_entity">
+            <column name="birth_date" value="21.01.1995"/>
+            <column name="first_name" value="Fname1"/>
+            <column name="gender" value="W"/>
+            <column name="last_name" value="Name1"/>
+            <column name="phone_number" value="8(800)555-35-35"/>
+        </insert>
+        <insert tableName="reader_entity">
+            <column name="birth_date" value="21.01.1995"/>
+            <column name="first_name" value="Fname2"/>
+            <column name="gender" value="W"/>
+            <column name="last_name" value="Name2"/>
+            <column name="phone_number" value="8(800)555-35-35"/>
+        </insert>
+        <insert tableName="reader_entity">
+            <column name="birth_date" value="21.01.1995"/>
+            <column name="first_name" value="Fname3"/>
+            <column name="gender" value="M"/>
+            <column name="last_name" value="Name3"/>
+            <column name="phone_number" value="8(800)555-35-35"/>
+        </insert>
+        <insert tableName="reader_entity">
+            <column name="birth_date" value="21.01.1995"/>
+            <column name="first_name" value="Fname4"/>
+            <column name="gender" value="W"/>
+            <column name="last_name" value="Name4"/>
+            <column name="phone_number" value="8(800)555-35-35"/>
+        </insert>
+        <insert tableName="reader_entity">
+            <column name="birth_date" value="21.01.1995"/>
+            <column name="first_name" value="Fname5"/>
+            <column name="gender" value="M"/>
+            <column name="last_name" value="Name5"/>
+            <column name="phone_number" value="8(800)555-35-35"/>
+        </insert>
+
+    </changeSet>
+
+    <!--User-->
+    <changeSet id="insert-user-data" author="Perepechin">
+
+        <insert tableName="user_entity">
+            <column name="username" value="username"/>
+            <column name="password" value="password"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
